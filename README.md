@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Property Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React app is designed to help property managers track properties, tenants, and leases. It provides an interface to view, add, edit, and delete data.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To get started with this app, follow these steps:
 
-### `npm start`
+1. Install dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   ```bash
+   npm install
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Run the app in development mode:
 
-### `npm test`
+   ```bash
+   npm start
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Build for production:
 
-### `npm run build`
+   ```bash
+   npm run build
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Key Files
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `src/App.js` - Main App component that renders the header, footer, and routes
+- `src/components/Header.js` - Header with app name and navigation
+- `src/components/Footer.js` - Footer with copyright info
+- `src/components/PropertyList.js` - Page to view all properties
+- `src/components/PropertyDetails.js` - Page to view details of a single property
+- `src/components/PropertyForm.js` - Form to add/edit a property
+- `src/components/TenantForm.js` - Form to add/edit a tenant
+- `src/components/LeaseForm.js` - Form to add/edit a lease
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+- Properties - View, add, edit, and delete properties
+- Tenants - View, add, edit, and delete tenants
+- Leases - View, add, edit, and delete leases associated with a property and tenant
+- Responsive Design - Mobile-friendly interface
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Functionality
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The main App component handles routing and renders the common header and footer on all pages.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- The PropertyList page fetches properties from the API and displays them in a table. Clicking a property navigates to the PropertyDetails page.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- The PropertyDetails page loads data for a single property by ID and displays the details. Related tenants and leases are also loaded and displayed.
 
-## Learn More
+- The PropertyForm handles both add and edit functionality. On submit, it will either make a POST or PUT request to the API to create/update the property.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The TenantForm and LeaseForm work similarly for managing tenants and leases. All forms validate input and display errors.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Overall, this provides a simple dashboard to manage properties and related data. The routing, reusable components, and API integration demonstrate some key patterns in React.
